@@ -7,6 +7,7 @@ if ( !(-f "sources_list/${current_version}.list") ) then
 else
   sudo cp -rf /etc/apt/sources.list /etc/apt/sources.list.bk
   sudo cp sources_list/${current_version}.list /etc/apt/sources.list
+  sudo apt-get update
 endif
 
 
