@@ -6,7 +6,7 @@
 #
 
 set tmp_path = ( . ~/bin )
-source /tool/aticad/1.0/flow/TileBuilder/util/sysadmin/cpd.cshrc
+#source /tool/aticad/1.0/flow/TileBuilder/util/sysadmin/cpd.cshrc
 set tmp_path = ( $tmp_path /tool/pandora64/bin /tool/pandora/bin )
 set tmp_path = ( $tmp_path /tool/sysadmin/scripts /tool/sysadmin/bin )
 set tmp_path = ( $tmp_path /tool/lsf/bin )
@@ -68,4 +68,4 @@ setenv EDITOR 'vi'
 # redundant now
 
 # sourcing the LSF environment
-source /tool/pandora/etc/lsf/cshrc.lsf
+#source /tool/pandora/etc/lsf/cshrc.lsf
