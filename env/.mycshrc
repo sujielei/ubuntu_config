@@ -1,0 +1,76 @@
+#!/bin/csh 
+#---------------------------------------------------------------------
+# SET DISPLAY ENVIRONMENT
+#---------------------------------------------------------------------
+
+stty sane
+
+
+
+set my_nxs = "cybhen-nveu0339 atlvgar05"
+
+foreach nx ($my_nxs)
+  if ( `hostname` == $nx ) then
+    set base_server = $nx
+    break
+  else
+    set base_server = ""
+  endif
+end
+if ( $base_server != "" ) then
+  echo "setenv DISPLAY ${base_server}${DISPLAY}" > ~/.DISP.csh
+  xhost +
+else
+  source ~/.DISP.csh
+endif
+#alias rsh "ssh -X "
+
+#if ( $?DISPLAY ) then
+#else
+#  setenv DISPLAY canton:45.0
+#endif
+
+set filec
+
+set prompt = "%m: %~%b # "
+
+#------------------------------------------------------------------------------
+limit stacksize unlimited
+limit descriptors unlimited
+set autologout = 0
+set autolist
+#------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+set path= ( $path ~/bin )
+#--------------------------------------------------------------------
+
+if (`uname -a | awk '{print $1}'` == Linux) then
+	set path = (/usr/X11R6/bin $path)
+	set path = (/user/home/marshals/tool/dic/ $path)
+	set path = (/user/home/marshals/bin/perl2exe $path)
+	alias pe '/user/home/marshals/bin/perl2exe/perl2exe'
+	set path = (/user/home/marshals/bin/pdk/bin $path)
+	set path = (/user/home/marshals/bin/pdk/share/man $path)
+        set path = (/proj/vega11-pdclk-nobackup/marshsu/bin/anaconda2/bin $path)
+	alias ls 'ls -F --color=auto'
+endif
+        
+setenv  LS_COLORS 'no=00:fi=02;31:di=02;34:ln=02;36:pi=40;33:so=02;31:bd=40;34;01:cd=40;33;01:or=40;35;01:ex=02;32:*.tar=02;35:*.tgz=02;35:*.arj=02;35:*.taz=02;35:*.lzh=02;35:*.zip=02;35:*.z=02;35:*.Z=02;35:*.gz=02;35:*.bz2=02;35:*.deb=02;35:*.rpm=02;35:*.jpg=02;35:*.png=02;35:*.gif=02;35:*.bmp=02;35:*.ppm=02;35:*.tga=02;35:*.xbm=02;35:*.xpm=02;35:*.tif=02;35:*.png=02;35:*.mpg=02;35:*.avi=02;35:*.fli=02;35:*.gl=02;35:*.dl=02;35'
+#setenv /usr/share/X11/xkb
+
+#---------------------------------------------------------------------
+# project setting
+#---------------------------------------------------------------------
+set path = ( $path ~/bin/proj_run )
+set path = ( $path ~/bin/proj_check )
+
+#a disk 'df -h | grep "VISIC\|Garnet\|Zhui\|M4ES\|SOC16d\|space\|Pezy-1\|SARADEC2\|THF9502\|DJIN6\|Rikyu\|Ganesha\|onepiece\|GANESHA\|D2\|Poire\|PS02\|Onepiece"'
+
+
+
+#module load python/2.7.1
+module load primetime/2015.06-SP3
+module unload CustomExplorer
+module load CustomExplorer/2014.09-SP1 
+
