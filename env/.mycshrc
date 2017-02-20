@@ -68,9 +68,9 @@ set path = ( $path ~/bin/proj_check )
 #a disk 'df -h | grep "VISIC\|Garnet\|Zhui\|M4ES\|SOC16d\|space\|Pezy-1\|SARADEC2\|THF9502\|DJIN6\|Rikyu\|Ganesha\|onepiece\|GANESHA\|D2\|Poire\|PS02\|Onepiece"'
 
 
-
-#module load python/2.7.1
-module load primetime/2015.06-SP3
-module unload CustomExplorer
-module load CustomExplorer/2014.09-SP1 
-
+#
+##module load python/2.7.1
+#module load primetime/2015.06-SP3
+#module unload CustomExplorer
+#module load CustomExplorer/2014.09-SP1 
+#
