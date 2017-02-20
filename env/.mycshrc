@@ -3,26 +3,26 @@
 # SET DISPLAY ENVIRONMENT
 #---------------------------------------------------------------------
 
-stty sane
+#stty sane
 
 
 
-set my_nxs = "cybhen-nveu0339 atlvgar05"
-
-foreach nx ($my_nxs)
-  if ( `hostname` == $nx ) then
-    set base_server = $nx
-    break
-  else
-    set base_server = ""
-  endif
-end
-if ( $base_server != "" ) then
-  echo "setenv DISPLAY ${base_server}${DISPLAY}" > ~/.DISP.csh
-  xhost +
-else
-  source ~/.DISP.csh
-endif
+#set my_nxs = "cybhen-nveu0339 atlvgar05"
+#
+#foreach nx ($my_nxs)
+#  if ( `hostname` == $nx ) then
+#    set base_server = $nx
+#    break
+#  else
+#    set base_server = ""
+#  endif
+#end
+#if ( $base_server != "" ) then
+#  echo "setenv DISPLAY ${base_server}${DISPLAY}" > ~/.DISP.csh
+#  xhost +
+#else
+#  source ~/.DISP.csh
+#endif
 #alias rsh "ssh -X "
 
 #if ( $?DISPLAY ) then
