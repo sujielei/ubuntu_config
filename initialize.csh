@@ -32,3 +32,6 @@ set current = `pwd`
 cd
 ln -sf $current/env/.* .
 
+# add user to virtual box group, or no permission to share directory
+sudo usermod -a -G vboxsf $USER
+
