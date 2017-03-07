@@ -5,7 +5,7 @@
 sudo ./scripts/update_sources_list.csh
 
 #- install vim konsole
-set software_list = "tcsh vim konsole git"
+set software_list = "unzip unrar tcsh vim konsole git"
 set install_list = ""
 set is_install = 0
 foreach software ( $software_list )
